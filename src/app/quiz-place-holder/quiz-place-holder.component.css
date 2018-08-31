@@ -1,0 +1,26 @@
+.pholder{
+    
+    width: 600px;
+    height: 220px;
+    
+    border-radius: 15px;
+    left: 30%;
+    position: relative;
+  
+}
+.card
+{
+background-color:gainsboro;
+}
+.question
+{
+ font-size: 25px;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.answer
+{
+    font-size: 25px;
+font-family: 'Times New Roman', Times, serif;
+}

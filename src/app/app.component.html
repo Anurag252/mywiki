@@ -1,0 +1,7 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <app-nav-component  [newAnswer] ="getNewAnswer()"  [newQuestion]="getNewQuestion()"  (sendData)="message=$event"></app-nav-component>
+ <div style="height: 50px;"></div>
+<div *ngFor="let index of [0,1,2,3,4,5]" style="position:relative;">
+  <app-quiz-place-holder [question]="getQuestion(index)" (changedAnswer)="newAnswerJson=$event" [answer] ="getAnswer(index)"> </app-quiz-place-holder>
+  <div style="height: 50px;"></div>
+</div>
