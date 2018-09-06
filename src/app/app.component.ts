@@ -7,12 +7,21 @@ import {NavComponentComponent} from './nav-component/nav-component.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  counter : Number = 5;
+export class AppComponent  {
+  counter  = new Array(0) ;
   message : any;
   newAnswerJson : any;
   newQuestion : any;
  
+
+  updateMessage(message : any)
+  {
+    console.log("jjkbhj");
+     this.message =message;
+     this.counter = new Array(this.message.response.length);
+  }
+
+
   getNewAnswer()
   {
     if(this.newAnswerJson !== undefined)
@@ -32,8 +41,7 @@ export class AppComponent {
  {
    if(this.message != undefined)
    {
-     
-     return this.message.response[index].set.question1;
+     return this.message.response[index].question;
    }
 
  }
@@ -43,7 +51,7 @@ export class AppComponent {
   if(this.message !== undefined)
   {
   
-  return this.message.response[index].set.answer;
+  return this.message.response[index].answer;
   }
  // var result = JSON.parse(this.message);
  //return result[index].set.answer;

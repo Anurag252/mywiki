@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { Jsonp, RequestOptions, Http } from '@angular/http';
 
 
 
@@ -24,8 +25,9 @@ interface JsonObj
 @Injectable()
 export class FetchCsharpService {
   json :JsonObj;
-  configUrl = 'http://demo3552177.mockable.io/getcsharpData';
-  constructor(private http: HttpClient) { 
+  //configUrl = 'http://demo3552177.mockable.io/getcsharpData';
+configUrl = "https://code-now-heroku.herokuapp.com";
+  constructor(private jsonp: HttpClient) { 
 
   }
 
@@ -36,43 +38,8 @@ export class FetchCsharpService {
  }
 
 getDataFromCsharpSerive() {
-  
-   this.json  = JSON.parse(`{
-    "response": [
-      {
-        "set": { 
-          "question1": "what is csharp",
-          "answer": "this is csharp"
-        }
-      },
-      {
-        "set": {
-          "question1": "what is csharp",
-          "answer": "this is csharp"
-        }
-      },
-      {
-        "set": {
-          "question1": "what is csharp",
-          "answer": "this is csharp"
-        }
-      },
-      {
-        "set": {
-          "question1": "what is csharp",
-          "answer": "this is csharp"
-        }
-      },
-      {
-        "set": {
-          "question1": "what is csharp",
-          "answer": "this is csharp"
-        }
-      }
-    ]
-  }`);
+ return this.jsonp.get(this.configUrl);
 
-  return   Observable.of(this.json) ;
 }
 
 }

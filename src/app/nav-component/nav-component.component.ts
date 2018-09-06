@@ -52,6 +52,7 @@ export class NavComponentComponent implements OnInit {
   assignToData(data : any)
   {
     this.data = data;
+    console.log(data);
     this.sendData.emit(this.data);
   }
 
