@@ -1,0 +1,12 @@
+
+
+.withBorders
+{
+    
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px;
+    background-color:gainsboro;
+}

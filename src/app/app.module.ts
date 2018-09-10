@@ -9,13 +9,15 @@ import {JsonpModule, Jsonp , Response } from '@angular/http';
 import { AppComponent } from './app.component';
 import { QuizPlaceHolderComponent } from './quiz-place-holder/quiz-place-holder.component';
 import { NavComponentComponent } from './nav-component/nav-component.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizPlaceHolderComponent,
-    NavComponentComponent
+    NavComponentComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule, HttpModule,FormsModule,JsonpModule,HttpClientModule

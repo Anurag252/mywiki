@@ -26,8 +26,9 @@ interface JsonObj
 export class FetchCsharpService {
   json :JsonObj;
   //configUrl = 'http://demo3552177.mockable.io/getcsharpData';
-configUrl = "https://code-now-heroku.herokuapp.com";
-  constructor(private jsonp: HttpClient) { 
+//configUrl = "http://localhost:8000/csharp";
+configUrl = "http://code-now-heroku.herokuapp.com/csharp";
+  constructor(private http: HttpClient) { 
 
   }
 
@@ -37,8 +38,15 @@ configUrl = "https://code-now-heroku.herokuapp.com";
   this.json.res.find(x => x.set.question1 == question).set.answer = newAnswer;
  }
 
+ addQuestion(question : string , answer : string)
+ {
+   console.log('{"question":"'+question + '","answer":"' +answer+'" }');
+ return this.http.post(this.configUrl,'{"question":"'+question + '","answer":"' +answer+'" }')
+ .subscribe(res => console.log(res));
+ }
+
 getDataFromCsharpSerive() {
- return this.jsonp.get(this.configUrl);
+ return this.http.get(this.configUrl);
 
 }
 

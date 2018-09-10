@@ -12,13 +12,24 @@ export class AppComponent  {
   message : any;
   newAnswerJson : any;
   newQuestion : any;
+  loadingStatus = false;
+  idleStatus = true;
+
+  constructor()
+  {
+  
+  }
  
 
   updateMessage(message : any)
   {
+    this.idleStatus = false;
+    this.loadingStatus = true;
     console.log("jjkbhj");
      this.message =message;
      this.counter = new Array(this.message.response.length);
+      this.loadingStatus=false;
+     
   }
 
 
